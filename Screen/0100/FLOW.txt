@@ -1,0 +1,24 @@
+
+process before output.
+  module status_0100.
+
+  module tc_attributes.
+
+  loop at gt_wspfli into yfox_wspfli with control tc_spfli
+    cursor tc_spfli-current_line.
+
+  endloop.
+
+process after input.
+
+  loop at gt_wspfli.
+
+    chain.
+      field yfox_wspfli-mark.
+      module mark_mark on chain-request.
+    endchain.
+
+
+  endloop.
+
+  module user_command_0100.
